@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+@import "tailwindcss";
+@plugin "daisyui" {
+  themes: all;
+}
+
+@theme {
+  --font-Poppins: 'Poppins';
+}
+
+/* Core Layout */
+.str-chat__channel {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: linear-gradient(to bottom right, #e4f3e4, #d1f2ce);
+}
+
+.str-chat__container {
+  width: 100%;
+  height: 100% !important;
+  background-color: #ffffff;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+/* Header */
+.str-chat__header-livestream {
+  padding: 1rem;
+  background-color: #f6fdf6;
+  border-bottom: 1px solid #d4e9d4;
+}
+
+/* Messages */
+.str-chat__list {
+  padding: 1rem;
+  background-color: #ffffff;
+}
+
+.str-chat__message {
+  margin-bottom: 1rem;
+  border-radius: 0.75rem;
+  padding: 0.75rem;
+  background-color: #f0fdf4;
+}
+
+.str-chat__message--me {
+  background-color: #d1fae5;
+}
+
+/* Input */
+.str-chat__message-input {
+  padding: 1rem;
+  border-top: 1px solid #e2e8f0;
+  background-color: #f9fafb;
+}
+
+.str-chat__message-textarea {
+  border-radius: 0.5rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Thread View */
+.str-chat__thread {
+  background-color: #ffffff;
+  padding: 1rem;
+}
