@@ -15,6 +15,7 @@ export default function HomePage() {
   const { data: friendsData = {}, isLoading: loadingFriends } = useQuery({
     queryKey: ['friends'],
     queryFn: getUserFriends,
+    staleTime: 0
   });
   const {theme} = useThemeStore();
 
@@ -73,7 +74,7 @@ const handleRequest = (id) => {
         </Link>
       </div>
 
-      <div  className="w-full flex flex-wrap  py-6">
+      <div  className="w-full flex flex-wrap  py-6 gap-5">
         {loadingFriends ? (
           <div className="flex justify-center w-full">
             <span className="loading loading-spinner loading-lg"></span>
