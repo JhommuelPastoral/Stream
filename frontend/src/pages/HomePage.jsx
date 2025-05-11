@@ -74,33 +74,22 @@ const handleRequest = (id) => {
         </Link>
       </div>
 
-      <div className="w-full overflow-x-auto py-6">
-        <div className="flex gap-5 flex-nowrap">
-          {loadingFriends ? (
-            <div className="flex justify-center w-full">
-              <span className="loading loading-spinner loading-lg"></span>
+      <div  className="w-full flex py-6 overflow-x-auto gap-5 max-w-full">
+        {loadingFriends ? (
+          <div className="flex justify-center w-full">
+            <span className="loading loading-spinner loading-lg"></span>
+          </div>
+        ) : friendsData.friends?.length === 0 ? (
+          <div className="flex justify-center w-full text-gray-500">
+            <NoFriendsFound/>
+          </div>
+        ) : (
+          friendsData?.friends?.map((friend) => (
+            <div key={friend._id} className="flex flex-col gap-5 w-90 bg-black/10 rounded-lg p-5">
+              <FriendCard id={friend?._id} profilePic={friend.profilePic} fullname={friend.fullname} nativeLanguage={friend.nativeLanguage} learningLanguage={friend.learningLanguage} />
             </div>
-          ) : friendsData.friends?.length === 0 ? (
-            <div className="flex justify-center w-full text-gray-500">
-              <NoFriendsFound />
-            </div>
-          ) : (
-            friendsData.friends.map((friend) => (
-              <div
-                key={friend._id}
-                className="flex-shrink-0 w-[280px] bg-black/10 rounded-lg p-5"
-              >
-                <FriendCard
-                  id={friend._id}
-                  profilePic={friend.profilePic}
-                  fullname={friend.fullname}
-                  nativeLanguage={friend.nativeLanguage}
-                  learningLanguage={friend.learningLanguage}
-                />
-              </div>
-            ))
-          )}
-        </div>
+          ))
+        )}
       </div>
 
       <div className="flex flex-col ">
