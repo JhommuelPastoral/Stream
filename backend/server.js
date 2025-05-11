@@ -9,7 +9,7 @@ import chatRoutes from './routes/chat.route.js';
 dotenv.config();
 const app = express();
 
-app.use(cors({credentials: true, origin: 'http://localhost:5173'}));
+app.use(cors({credentials: true, origin: 'https://stream-ygk0.onrender.com'}));
 app.use(express.json());
 app.use(cookieParser());
 
