@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const axiosInstance = axios.create({
-  baseURL: 'https://streambackend-ov4o.onrender.com/api',
+  baseURL: 'https://streambackend-fvop.onrender.com/api',
   withCredentials: true
 });
 
