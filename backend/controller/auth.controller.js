@@ -45,7 +45,7 @@ export const signup =  async (req, res) => {
       httpOnly: true,
       maxAge: 7 * 24 * 60 * 60 * 1000,
       sameSite: 'strict',
-      secure: process.env.NODE_ENV === 'production'
+      secure: true
     })
     res.status(201).json({sucess: true, user: newUser})
     
@@ -77,7 +77,7 @@ export const login = async(req, res) => {
       httpOnly: true,
       maxAge: 7 * 24 * 60 * 60 * 1000,
       sameSite: 'strict',
-      secure: process.env.NODE_ENV === 'production'
+      secure: true
     })
     res.status(200).json({sucess: true, user: userExist})
 
