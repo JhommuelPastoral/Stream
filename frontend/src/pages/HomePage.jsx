@@ -74,7 +74,7 @@ const handleRequest = (id) => {
         </Link>
       </div>
 
-      <div  className="w-full flex py-6 overflow-x-auto gap-5 max-w-full">
+      <div  className="w-full flex py-6 flex-wrap gap-5 ">
         {loadingFriends ? (
           <div className="flex justify-center w-full">
             <span className="loading loading-spinner loading-lg"></span>
